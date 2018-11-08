@@ -1,30 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
+import {CalendarModule, DateAdapter} from 'angular-calendar';
+import {CalendarHeaderComponent} from './calendar/calendar-header.componenet';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CalComponent} from './calendar/calendar.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RouterModule, Routes } from '@angular/router';
-
-
-
-const appRoutes: Routes = [
-]
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginFormComponent,
-    DashboardComponent
-  ],
-  imports: [
-    RouterModule.forRoot(appRoutes),
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [CommonModule, FormsModule, BrowserAnimationsModule, CalendarModule.forRoot({
+    provide: DateAdapter,
+    useFactory: adapterFactory
+  }), CalendarModule],
+  declarations: [CalendarHeaderComponent, CalComponent],
+  exports: [CalendarHeaderComponent, CalComponent]
 })
-export class AppModule { }
+export class AppModule {}
