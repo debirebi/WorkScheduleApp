@@ -13,12 +13,15 @@ import {DashboardComponent} from './app/dashboard/dashboard.component';
 import {CalModule} from './app/calendar/calendar.module';
 import {CalComponent} from './app/calendar/calendar.component';
 import {AppRoutingModule} from './app/app-routing.module';
+import { HeaderComponent} from './app/header/header.component';
+
 if (environment.production) {
   enableProdMode();
 }
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     AppComponent,
     LoginFormComponent,
     DashboardComponent
