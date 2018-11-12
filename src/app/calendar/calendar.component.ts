@@ -15,20 +15,27 @@ export class CalComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      title: 'Click me',
+      title: 'Attila',
       color: colors.yellow,
       start: new Date()
     },
     {
-      title: 'Or click me',
+      title: 'Rebeka',
       color: colors.blue,
       start: new Date()
+    },
+    {
+      title: 'Adnan',
+      color: colors.red,
+      start: new Date('11/13/2018, 11:49:36 AM')
     }
   ];
+  clickedDate: Date;
 
   eventClicked({ event }: { event: CalendarEvent }): void {
     console.log('Event clicked', event);
   }
+  /// TODO Adding method for setting person to day.
   constructor() { }
 
   ngOnInit() {

@@ -48,12 +48,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
             [class.active]="view === 'week'">
             Week
           </div>
-          <div
-            class="btn btn-primary"
-            (click)="viewChange.emit('day')"
-            [class.active]="view === 'day'">
-            Day
-          </div>
         </div>
       </div>
     </div>

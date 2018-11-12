@@ -5,24 +5,23 @@
   [(viewDate)]="viewDate">
 </app-calendar-header>
 
+<div class="alert alert-info">
+  Click on a day on the view.
+  <strong *ngIf="clickedDate">You clicked on this day: {{ clickedDate | date:'medium' }}</strong>
+</div>
+
 <div [ngSwitch]="view">
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
     [viewDate]="viewDate"
     [events]="events"
-    [activeDayIsOpen]="true"
-    (eventClicked)="eventClicked($event)">
+    (dayClicked)="clickedDate = $event.day.date">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"
     [viewDate]="viewDate"
     [events]="events"
-    (eventClicked)="eventClicked($event)">
+    (dayClicked)="clickedDate = $event.day.date">
+    /*(eventClicked)="eventClicked($event)">*/
   </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="'day'"
-    [viewDate]="viewDate"
-    [events]="events"
-    (eventClicked)="eventClicked($event)">
-  </mwl-calendar-day-view>
 </div>
