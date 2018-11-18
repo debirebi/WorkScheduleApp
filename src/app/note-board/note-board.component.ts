@@ -13,20 +13,21 @@ export class NoteBoardComponent implements OnInit {
   notes: Note[];
 
   addNoteForm = new FormGroup( {
-    header: new FormControl(''),
+    user: new FormControl(''),
     text: new FormControl('')
   });
   constructor() { }
 
   ngOnInit() {
     this.notes = [
-      {id: this.ID++, header: 'okosak vagyunk', text: 'nagyooon kitakarítottatok!!!44'},
-      {id: this.ID++, header: 'dliaj', text: 'dwiajdliajwldijwa'}
+      {id: this.ID++, user: 'Rebeka', text: 'nagyooon kitakarítottatok!!!44'},
+      {id: this.ID++, user: 'Rebeka', text: 'dwiajdliajwldijwa'}
     ];
   }
 
   saveNote() {
     const note = this.addNoteForm.value;
+    note.user = 'Rebeka';
     this.notes.push(note);
     this.addNoteForm.reset();
   }
