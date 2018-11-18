@@ -1,0 +1,14 @@
+<li *ngFor="let Note of notes">
+  {{Note.header}} {{Note.text}}
+</li>
+<form [formGroup]="addNoteForm" (ngSubmit)="saveNote()">
+  <label>
+    Header:
+    <input type="text" formControlName="header">
+  </label>
+  <label>
+    Text:
+    <input type="text" formControlName="text">
+  </label>
+<button type="submit">Submit</button>
+</form>

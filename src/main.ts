@@ -8,10 +8,7 @@ import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 import {AppModule} from './app/app.module';
 import {AppComponent} from './app/app.component';
 import {LoginFormComponent} from './app/login-form/login-form.component';
-import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './app/dashboard/dashboard.component';
-import {CalModule} from './app/calendar/calendar.module';
-import {CalComponent} from './app/calendar/calendar.component';
 import {AppRoutingModule} from './app/app-routing.module';
 import { HeaderComponent} from './app/header/header.component';
 
