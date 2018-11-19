@@ -8,9 +8,11 @@ import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CalComponent} from './calendar/calendar.component';
 import { NoteBoardComponent } from './note-board/note-board.component';
+import {MatCardModule} from '@angular/material';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, CalendarModule.forRoot({
+  imports: [BrowserAnimationsModule, MatCardModule, CommonModule,
+    FormsModule, ReactiveFormsModule, BrowserAnimationsModule, CalendarModule.forRoot({
     provide: DateAdapter,
     useFactory: adapterFactory
   }), CalendarModule],
