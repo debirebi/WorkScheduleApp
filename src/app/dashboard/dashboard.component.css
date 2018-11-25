@@ -1,9 +1,6 @@
-#div1
-{
-  display: inline-block;
+
+mat-sidenav {
+  width: 30%;
 }
-#div2
-{
-  display: inline-block;
-  vertical-align:top
-}
+
+

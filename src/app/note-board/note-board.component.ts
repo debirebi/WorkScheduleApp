@@ -9,8 +9,8 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class NoteBoardComponent implements OnInit {
 
-  ID = 1;
   notes: Note[];
+  public currentUser: string;
 
   addNoteForm = new FormGroup( {
     user: new FormControl(''),
@@ -20,8 +20,8 @@ export class NoteBoardComponent implements OnInit {
 
   ngOnInit() {
     this.notes = [
-      {id: this.ID++, user: 'Rebeka', text: 'nagyooon kitakarítottatok!!!44'},
-      {id: this.ID++, user: 'Rebeka', text: 'dwiajdliajwldijwa'}
+      {user: 'Rebeka', text: 'Message example :) '},
+      {user: 'Rebeka', text: 'Messgae example 2 '}
     ];
   }
 

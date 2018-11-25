@@ -1,23 +1,34 @@
 
-
-
 button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #0062cc;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+  position: relative; left: 50%;
+  transform: translateX(-50%);
 }
+mat-list {
+  height: 60%;
+  flex-grow: 1;
+  overflow: auto;
+}
+
 input {
-  border-radius: 25px;
-  width: 160px;
-  height: 40px;
+  border-radius: 10%;
+  width: 200%;
+  height: 50px;
+
+}
+
+textarea {
+
+}
+
+div {
+  background-color: #686868;
+}
+
+mat-card {
+  display: flow; flex-direction: column;
+
+}
+
+mat-list-item {
 
 }

@@ -1,13 +1,14 @@
-<form (submit)="loginUser($event)">
-  <div class="input">
-    <label>Username</label>
-    <input type="text">
-  </div>
-  <div class="input">
-    <label>Password</label>
-    <input type="password">
-  </div>
-  <div class="input">
-    <input type="submit" value="Login">
-  </div>
+<mat-card>
+<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <mat-form-field>
+      <input matInput type="text" placeholder="Username" formControlName="username">
+      </mat-form-field>
+  <br>
+      <mat-form-field>
+      <input matInput  type="password" placeholder="Password" formControlName="password">
+      </mat-form-field>
+<br>
+  <button mat-flat-button color="accent" type="submit">Login</button>
+
 </form>
+</mat-card>

@@ -1,22 +1,32 @@
 
-  <li *ngFor="let Note of notes">
+  <mat-list>
+   <mat-card *ngFor="let Note of notes">
 
-        <mat-card> {{Note.header}} </mat-card>   <mat-card>  {{Note.text}}</mat-card>
-  </li>
+  <mat-card-title> {{Note.user}} </mat-card-title> <br>  <mat-card-content>{{Note.text}} </mat-card-content>
+        </mat-card>
+
+  </mat-list>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <mat-card>
 
   <form [formGroup]="addNoteForm" (ngSubmit)="saveNote()">
 
-  <br><br><br><br><br><br><br><br><br>
 
-  <label>
-    Text:
-    <input type="text" formControlName="text">
-  </label>
-  <br>
-<button type="submit">Send text</button>
-</form>
 
+
+     <mat-form-field class="textarea">
+      <textarea matInput placeholder="Write message" formControlName="text"></textarea>
+    </mat-form-field>
+
+
+    <br>
+
+        <button mat-flat-button id="addButton" color="accent" layout-align="end center" >Send message</button>
+
+   </form>
+
+
+      </mat-card>
 
 

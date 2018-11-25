@@ -11,6 +11,18 @@ import {LoginFormComponent} from './app/login-form/login-form.component';
 import {DashboardComponent} from './app/dashboard/dashboard.component';
 import {AppRoutingModule} from './app/app-routing.module';
 import { HeaderComponent} from './app/header/header.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDividerModule,
+  MatFormFieldModule, MatGridListModule,
+  MatInputModule, MatListModule, MatSidenavModule,
+} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import 'hammerjs';
+import {NoteBoardComponent} from './app/note-board/note-board.component';
+
+
 
 if (environment.production) {
   enableProdMode();
@@ -21,13 +33,24 @@ if (environment.production) {
     HeaderComponent,
     AppComponent,
     LoginFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    NoteBoardComponent
   ],
   imports: [
+    MatListModule,
+    MatGridListModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppModule,
     AppRoutingModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDividerModule,
+    MatSidenavModule,
     CalendarModule.forRoot({
       useFactory: adapterFactory,
       provide: DateAdapter

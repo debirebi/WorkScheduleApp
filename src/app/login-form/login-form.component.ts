@@ -1,5 +1,6 @@
  import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+ import {FormControl, FormGroup} from '@angular/forms';
 
  @Component({
   selector: 'app-login-form',
@@ -7,6 +8,10 @@ import { Router} from '@angular/router';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
+   loginForm = new FormGroup( {
+     username: new FormControl(''),
+     password: new FormControl('')
+   });
 
    constructor(private router: Router) {
    }
@@ -14,11 +19,10 @@ export class LoginFormComponent implements OnInit {
    ngOnInit() {
    }
 
-   loginUser(e) {
-     e.preventDefault();
-     console.log(e);
-     const username = e.target.elements[0].value;
-     const password = e.target.elements[1].value;
+   loginUser() {
+     const user = this.loginForm.value;
+     const username = user.username;
+     const password = user.password;
      if (username === 'Rebeka' && password === '1234' || username === 'Ati' && password === '1234'
        || username === 'Adnan' && password === '1234') {
        this.router.navigate(['dashboard']);

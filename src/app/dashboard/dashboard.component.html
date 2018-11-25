@@ -1,7 +1,11 @@
-<div id="div1">
-<app-calendar></app-calendar>
-</div>
+<p><button  mat-flat-button color="accent" (click)="message.toggle()">Show Messages!</button></p>
+<mat-sidenav-container>
 
-<div id="div2">
-  <app-note-board></app-note-board>
-</div>
+    <mat-sidenav #message mode="side">
+      <app-note-board></app-note-board>
+    </mat-sidenav>
+
+  <mat-sidenav-content #calendar>
+    <app-calendar></app-calendar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
