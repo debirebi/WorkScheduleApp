@@ -23,8 +23,8 @@ export class LoginFormComponent implements OnInit {
      const user = this.loginForm.value;
      const username = user.username;
      const password = user.password;
-     if (username === 'Rebeka' && password === '1234' || username === 'Ati' && password === '1234'
-       || username === 'Adnan' && password === '1234') {
+     if (username === 'Rebeka' && password === '1234' || username === 'Attila' && password === '1234'
+       || username === 'Adnan' && password === '1234' || username === 'Ági' && password === '1234') {
        this.router.navigate(['dashboard']);
      }
    }

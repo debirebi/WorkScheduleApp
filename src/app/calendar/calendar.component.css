@@ -1,0 +1,26 @@
+form{
+  background-color: gainsboro;
+}
+
+
+#previous {
+background-color: #bf0113;
+ }
+
+ #today {
+   background-color: #ffb6b1;
+ }
+ #next {
+ background-color: #bf0113;
+}
+
+
+ #month{
+   background-color: #bf0113;
+ }
+ #day{
+   background-color: #bf0113;
+ }
+div.alert-info{
+  background-color: #ffb6b1;
+}

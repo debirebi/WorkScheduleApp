@@ -1,6 +1,13 @@
 
 mat-sidenav {
   width: 30%;
+  background-color: grey;
 }
 
+div {
+  background-color: gainsboro;
+}
 
+mat-sidenav-container{
+  background-color: gainsboro;
+}

@@ -2,6 +2,7 @@
 button {
   position: relative; left: 50%;
   transform: translateX(-50%);
+
 }
 mat-list {
   height: 60%;
@@ -15,20 +16,17 @@ input {
   height: 50px;
 
 }
-
-textarea {
-
-}
-
 div {
   background-color: #686868;
 }
 
 mat-card {
   display: flow; flex-direction: column;
+  margin: 10px;
 
 }
 
-mat-list-item {
+mat-form-field{
 
+  width: 100%;
 }

@@ -11,20 +11,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./calendar.component.css']
 })
 export class CalComponent implements OnInit {
+  /// TODO Adding method for setting person to day.
+  constructor(private router: Router) { this.fillCoded(); }
   view = 'month';
 
   viewDate: Date = new Date();
 
-  events: CalendarEvent[] = []
+  events: CalendarEvent[] = [];    // equal database//
   clickedDate: Date;
-
   addEventForm = new FormGroup( {
     title: new FormControl(''),
     color: new FormControl(''),
     start: new FormControl('')
   });
-  /// TODO Adding method for setting person to day.
-  constructor(private router: Router) { this.fillCoded(); }
 
   ngOnInit() {
   }
@@ -56,5 +55,9 @@ export class CalComponent implements OnInit {
 
     this.events.push (calevent);
     this.addEventForm.reset();
+  }
+
+  consoleTest (name: string) {
+    console.log(name);
   }
 }

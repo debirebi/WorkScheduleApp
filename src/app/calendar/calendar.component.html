@@ -12,7 +12,11 @@
   </label>
   <button mat-flat-button color="accent" type="submit">Submit</button>
 </form>
-
+<mat-menu #menu="matMenu"  [xPosition]="" [yPosition]="">
+  <button mat-menu-item onclick="consoleTest('Rebeka')">Rebeka</button>
+  <button mat-menu-item>Attila</button>
+  <button mat-menu-item>Adnan</button>
+</mat-menu>
 <app-calendar-header
   [(view)]="view"
   [(viewDate)]="viewDate">
@@ -28,13 +32,15 @@
     *ngSwitchCase="'month'"
     [viewDate]="viewDate"
     [events]="events"
-    (dayClicked)="clickedDate = $event.day.date">
+    [weekStartsOn]="1"
+    (dayClicked)="clickedDate = $event.day.date"
+    [matMenuTriggerFor]="menu">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"
     [viewDate]="viewDate"
     [events]="events"
     (dayClicked)="clickedDate = $event.day.date">
-    /*(eventClicked)="eventClicked($event)">*/
+
   </mwl-calendar-week-view>
 </div>
