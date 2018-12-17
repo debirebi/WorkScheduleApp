@@ -30,8 +30,7 @@
     [viewDate]="viewDate"
     [events]="events"
     [weekStartsOn]="1"
-    (dayClicked)="clickedDate = $event.day.date"
-    [matMenuTriggerFor]="menu">
+    (dayClicked)="clickedDate = $event.day.date">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"
