@@ -1,4 +1,5 @@
 export class Note {
   user: string;
-  text: string;
+  postDate: Date;
+  msgText: string;
 }

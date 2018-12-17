@@ -1,16 +1,20 @@
 <div>
-<p><button  mat-flat-button color="accent" (click)="message.toggle()">Show Messages!</button></p>
+  <div>
+  <button  mat-flat-button color="accent" (click)="message.toggle()">Show Messages!</button>
+      <button mat-flat-button color="accent" (click)="logout()">Logout</button>
+</div>
+
 <mat-sidenav-container>
 
     <mat-sidenav #message mode="side">
       <app-note-board></app-note-board>
     </mat-sidenav>
-  <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
-    Pizza party
-  </button>
+    <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+      Pizza party
+    </button>
 
-  <mat-sidenav-content #calendar>
-    <app-calendar></app-calendar>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <mat-sidenav-content #calendar>
+      <app-calendar></app-calendar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

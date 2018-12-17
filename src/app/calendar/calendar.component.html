@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
-
+<mat-card *ngIf="getIsAdmin() == true">
 <form [formGroup]="addEventForm" (ngSubmit)="saveEvent()">
   <label>
     Name:
@@ -12,11 +12,8 @@
   </label>
   <button mat-flat-button color="accent" type="submit">Submit</button>
 </form>
-<mat-menu #menu="matMenu"  [xPosition]="" [yPosition]="">
-  <button mat-menu-item onclick="consoleTest('Rebeka')">Rebeka</button>
-  <button mat-menu-item>Attila</button>
-  <button mat-menu-item>Adnan</button>
-</mat-menu>
+</mat-card>
+
 <app-calendar-header
   [(view)]="view"
   [(viewDate)]="viewDate">

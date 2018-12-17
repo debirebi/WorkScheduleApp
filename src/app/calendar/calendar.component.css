@@ -21,6 +21,11 @@ background-color: #bf0113;
  #day{
    background-color: #bf0113;
  }
+
+ form {
+   padding: 1%;
+   border-radius: 5px;
+ }
 div.alert-info{
   background-color: #ffb6b1;
 }

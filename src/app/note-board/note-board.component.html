@@ -1,7 +1,16 @@
   <mat-list>
    <mat-card *ngFor="let Note of notes">
 
-  <mat-card-title> {{Note.user}} </mat-card-title> <br>  <mat-card-content>{{Note.text}} </mat-card-content>
+  <mat-card-title>
+    {{Note.user}}
+  </mat-card-title>
+     <mat-card-subtitle>
+       {{formatDateMsg(Note.postDate)}}
+     </mat-card-subtitle>
+     <br>
+     <mat-card-content>
+       {{Note.msgText}}
+     </mat-card-content>
         </mat-card>
 
   </mat-list>

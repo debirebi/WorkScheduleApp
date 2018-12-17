@@ -3,6 +3,9 @@ import { CalendarEvent } from 'angular-calendar';
 import {colors} from './calendar.colors';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {EventService} from '../services/event.service';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../services/user-service.service';
 
 
 @Component({
@@ -12,12 +15,17 @@ import {Router} from '@angular/router';
 })
 export class CalComponent implements OnInit {
   /// TODO Adding method for setting person to day.
-  constructor(private router: Router) { this.fillCoded(); }
+  constructor(private router: Router,
+              private _eventService: EventService,
+              private http: HttpClient,
+              private _userService: UserService) {}
+
+  calEvents: CalendarEvent[];
   view = 'month';
 
   viewDate: Date = new Date();
 
-  events: CalendarEvent[] = [];    // equal database//
+  events: CalendarEvent[];    // equal database//
   clickedDate: Date;
   addEventForm = new FormGroup( {
     title: new FormControl(''),
@@ -26,38 +34,42 @@ export class CalComponent implements OnInit {
   });
 
   ngOnInit() {
+    this.refresh();
   }
 
-  fillCoded() {
-    this.events = [
-      {title: 'Attila', color: colors.yellow, start: new Date('11/13/2018')},
-      {title: 'Rebeka', color: colors.red, start: new Date('11/13/2018, 11:49:36 AM')},
-      {title: 'Adnan', color: colors.blue, start: new Date('11/13/2018, 11:49:36 AM')}
-    ];
-    console.log(this.events);
-  }
+  refresh() {
+    this._eventService.getEvents().subscribe(list => {
+        list.forEach( event => event.start = new Date(event.start));
+        console.log(list);
+        return this.events = list;
+      }
+    );
+}
+
   saveEvent() {
     const calevent = this.addEventForm.value;
-    if (this.addEventForm.controls.title.value === 'Attila') {
-      calevent.title = 'Attila'
-      calevent.color = colors.yellow;
-      calevent.start = new Date(this.addEventForm.controls.start.value);
-      console.log(calevent)
-      this.events.push (calevent);
+    const user = this.addEventForm.controls.title.value;
+    if (user === 'Attila') {
+      calevent.title = user;
+      calevent.color = colors.blue;
+      calevent.start = new Date(this.addEventForm.controls.start.value).toString();
     }
     if (this.addEventForm.controls.title.value === 'Rebeka') {
+      calevent.title = user;
       calevent.color = colors.red;
+      calevent.start = new Date(this.addEventForm.controls.start.value).toString();
     }
     if (this.addEventForm.controls.title.value === 'Adnan') {
-      calevent.color = colors.blue;
+      calevent.title = user;
+      calevent.color = colors.yellow;
+      calevent.start = new Date(this.addEventForm.controls.start.value).toString();
     }
-    console.log(this.events);
-
-    this.events.push (calevent);
-    this.addEventForm.reset();
+    this._eventService.addEvent(calevent).subscribe( () =>
+      location.reload()
+  );
   }
 
-  consoleTest (name: string) {
-    console.log(name);
+  getIsAdmin(): boolean {
+    return this._userService.getIsAdmin();
   }
 }

@@ -21,6 +21,7 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import 'hammerjs';
 import {NoteBoardComponent} from './app/note-board/note-board.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -46,6 +47,7 @@ if (environment.production) {
     MatCardModule,
     MatFormFieldModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
